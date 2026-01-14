@@ -89,7 +89,7 @@ const App: React.FC = () => {
                   <ContactForm />
                 </div>
                 <div className="mt-16 pt-8 border-t border-gray-200 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-                  <p>&copy; 2026 SanFran InovaLab. USP.</p>
+                  <p>© 2026 SanFran InovaLab. USP.</p>
                   <div className="flex flex-wrap justify-center md:justify-start gap-6">
                     <a href="https://www.instagram.com/sanfranlab/" target="_blank" rel="noopener noreferrer" className="hover:text-fox-500 transition-colors">Instagram</a>
                     <a href="https://br.linkedin.com/company/sanfran-lab" target="_blank" rel="noopener noreferrer" className="hover:text-fox-500 transition-colors">LinkedIn</a>

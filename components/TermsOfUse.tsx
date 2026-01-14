@@ -152,7 +152,7 @@ export const TermsOfUse: React.FC<TermsOfUseProps> = ({ isOpen, onClose }) => {
                         {/* Footer buttons */}
                         <div className="px-8 py-6 bg-gray-50 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
                             <p className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
-                                &copy; 2025 Labora - SanFran InovaLab
+                                © 2025 Labora - SanFran InovaLab
                             </p>
                             <button
                                 onClick={onClose}

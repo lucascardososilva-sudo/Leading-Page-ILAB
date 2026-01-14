@@ -57,7 +57,6 @@ export const VibeCoding: React.FC = () => {
                                     <div className="w-3 h-3 rounded-full bg-yellow-500/40" />
                                     <div className="w-3 h-3 rounded-full bg-green-500/40" />
                                 </div>
-                                <div className="text-[10px] font-mono text-white/30 uppercase tracking-widest">legal-agent.ts</div>
                                 <Terminal size={14} className="text-white/20" />
                             </div>
 
@@ -109,17 +108,7 @@ export const VibeCoding: React.FC = () => {
                                 />
                             </div>
 
-                            {/* Status Bar */}
-                            <div className="bg-white/5 px-6 py-2 flex items-center justify-between border-t border-white/5 text-[10px] font-mono text-white/40">
-                                <div className="flex gap-4">
-                                    <span>UTF-8</span>
-                                    <span>TypeScript</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                                    <span>AI Engine Active</span>
-                                </div>
-                            </div>
+
                         </div>
 
                         {/* Background Glowing Orbs */}

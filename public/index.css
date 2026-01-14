@@ -1,0 +1,146 @@
+/* Responsive Mobile Styles */
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* General responsive fixes */
+@media (max-width: 767px) {
+
+  /* Hero section adjustments */
+  #hero h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.15 !important;
+  }
+
+  #hero p {
+    font-size: 1rem !important;
+  }
+
+  /* Floating cards - hide some on mobile for cleaner look */
+  #hero .absolute[class*="lg:-left-"],
+  #hero .absolute[class*="lg:-right-"],
+  #hero .absolute[class*="lg:-top-"],
+  #hero .absolute[class*="lg:-bottom-"] {
+    display: none;
+  }
+
+  /* Container padding adjustments */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Section padding adjustments */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Typography scaling */
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* Cards grid adjustments */
+  .grid.md\\:grid-cols-3,
+  .grid.md\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Button adjustments */
+  .flex.flex-wrap.gap-4 {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .flex.flex-wrap.gap-4 a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 2rem !important;
+  }
+
+  /* Hide floating cards container decorations on very small screens */
+  #hero .relative.w-\\[340px\\]>div:not(.flex) {
+    opacity: 0.3;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #hero h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .grid.md\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Squads illustration specific mobile styles */
+@media (max-width: 767px) {
+  #squads .w-full.h-\\[500px\\] {
+    height: auto !important;
+    min-height: 600px;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure images don't overflow */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 767px) {
+
+  a,
+  button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Animation performance optimization for mobile */
+@media (max-width: 767px) {
+  .animate-float {
+    animation-duration: 4s;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

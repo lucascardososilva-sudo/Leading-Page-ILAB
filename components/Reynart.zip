@@ -1,0 +1,129 @@
+import React, { useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { TrendingUp, Award, Zap, Briefcase, Share2, Rocket } from 'lucide-react';
+import { FoxLogo } from './ui/FoxLogo';
+
+export const Reynart: React.FC = () => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <section id="reynart" className="py-32 bg-[#050914] text-white overflow-hidden relative">
+            {/* Dynamic Background Light */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-fox-600/5 rounded-full blur-[120px] pointer-events-none" />
+
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="flex flex-col lg:flex-row items-center gap-20">
+
+                    <div className="lg:w-1/2 perspective-1000">
+                        <motion.div
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+                            className="relative group"
+                        >
+                            {/* Outer Glow */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-fox-500 to-orange-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
+
+                            <div className="bg-navy-900/80 backdrop-blur-xl border border-white/10 p-10 rounded-[2.5rem] relative shadow-2xl overflow-hidden">
+                                {/* Shine effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+                                <div className="flex items-center gap-6 mb-10" style={{ transform: "translateZ(50px)" }}>
+                                    <div className="w-20 h-20 bg-fox-500 rounded-2xl flex items-center justify-center p-3 shadow-[0_0_30px_rgba(245,128,37,0.3)]">
+                                        <FoxLogo className="w-full h-full text-white" />
+                                    </div>
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-1">
+                                            <h3 className="text-4xl font-display font-black tracking-tighter">Estúdio Reynart</h3>
+                                            <span className="px-2 py-0.5 rounded text-[8px] bg-fox-500/20 text-fox-400 border border-fox-500/30 uppercase font-black tracking-widest whitespace-nowrap">
+                                                Projeto Futuro
+                                            </span>
+                                        </div>
+                                        <p className="text-fox-400 font-bold uppercase tracking-widest text-xs">Venture Studio & Pipeline</p>
+                                    </div>
+                                </div>
+
+                                <p className="text-gray-400 leading-relaxed mb-10 text-lg" style={{ transform: "translateZ(30px)" }}>
+                                    "A astúcia da raposa aplicada ao mercado." Reynart é o braço de escala em fase de articulação que irá transpor a barreira acadêmica, transformando protótipos em spin-offs prontas para o investimento.
+                                </p>
+
+                                <div className="space-y-6" style={{ transform: "translateZ(40px)" }}>
+                                    {[
+                                        { icon: Rocket, title: "Incubação Real", desc: "Transformamos squads validados em startups escaláveis." },
+                                        { icon: Award, title: "Iron Tech Lawyer", desc: "Competição nacional de MVPs sob pressão de mercado." }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-5 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-fox-500/30 transition-colors group/item">
+                                            <div className="p-3 bg-fox-500/10 rounded-xl text-fox-500 group-hover/item:scale-110 transition-transform">
+                                                <item.icon size={24} />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-white">{item.title}</h4>
+                                                <p className="text-sm text-gray-500">{item.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <div className="lg:w-1/2">
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                        >
+
+                            <h2 className="text-5xl font-display font-black mb-8 leading-tight tracking-tighter">
+                                O Salto do Lab para o <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-fox-400 to-orange-500">Mundo Corporativo</span>
+                            </h2>
+                            <p className="text-gray-400 mb-12 text-xl leading-relaxed">
+                                Garantimos que a inovação não morra no papel. Reynart conecta a força intelectual da USP com Venture Capitals e Big Law, criando um fluxo sustentável de tecnologia.
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    { icon: Share2, title: "Day VC", desc: "Conexão direta com Investidores Anjo e Big Law." },
+                                    { icon: Zap, title: "Sustentabilidade", desc: "Reinvestimento em bolsas e infraestrutura de IA." }
+                                ].map((feat, i) => (
+                                    <div key={i} className="bg-white/[0.03] p-8 rounded-3xl border border-white/5 hover:bg-white/[0.05] transition-all hover:border-fox-500/20 group">
+                                        <div className="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center text-fox-400 mb-6 group-hover:scale-110 transition-transform">
+                                            <feat.icon size={24} />
+                                        </div>
+                                        <h4 className="text-lg font-black mb-3 text-white">{feat.title}</h4>
+                                        <p className="text-sm text-gray-500 leading-relaxed font-medium">{feat.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+};

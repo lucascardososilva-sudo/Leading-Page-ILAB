@@ -1,8 +1,9 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
+import { Hero } from './components/Hero';
+
 // Lazy load heavy components
-const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
 const Squads = lazy(() => import('./components/Squads').then(module => ({ default: module.Squads })));
 const Education = lazy(() => import('./components/Education').then(module => ({ default: module.Education })));
 const Reynart = lazy(() => import('./components/Reynart').then(module => ({ default: module.Reynart })));
@@ -52,8 +53,8 @@ const App: React.FC = () => {
         <GlassNav items={NAV_ITEMS} />
 
         <main>
+          <Hero />
           <Suspense fallback={<div className="h-screen flex items-center justify-center bg-white"><div className="w-8 h-8 border-4 border-fox-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-            <Hero />
 
             {/* Mission Statement */}
             <section id="mission" className="py-20 bg-white border-y border-gray-100 relative overflow-hidden">

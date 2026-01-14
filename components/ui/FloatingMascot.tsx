@@ -119,7 +119,7 @@ export const FloatingMascot: React.FC<FloatingMascotProps> = ({
                         {/* Header */}
                         <div className="bg-gradient-to-r from-fox-500 to-orange-400 p-6 text-white flex justify-between items-start shrink-0">
                             <div>
-                                <h3 className="text-xl font-bold">Sanfran Lab Assistant</h3>
+                                <h3 className="text-xl font-bold">SanFran InovaLab Assistant</h3>
                                 <p className="text-fox-100 text-xs mt-1">Perguntas Frequentes & Tese</p>
                             </div>
                             <button

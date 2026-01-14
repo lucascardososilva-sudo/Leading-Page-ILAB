@@ -16,29 +16,6 @@ const CODE_SNIPPETS = [
 ];
 
 export const VibeCoding: React.FC = () => {
-    const [displayText, setDisplayText] = useState("");
-    const [lineIndex, setLineIndex] = useState(0);
-    const [charIndex, setCharIndex] = useState(0);
-
-    useEffect(() => {
-        if (lineIndex < CODE_SNIPPETS.length) {
-            if (charIndex < CODE_SNIPPETS[lineIndex].length) {
-                const timer = setTimeout(() => {
-                    setDisplayText(prev => prev + CODE_SNIPPETS[lineIndex][charIndex]);
-                    setCharIndex(prev => prev + 1);
-                }, 40);
-                return () => clearTimeout(timer);
-            } else {
-                const timer = setTimeout(() => {
-                    setDisplayText(prev => prev + "\n");
-                    setLineIndex(prev => prev + 1);
-                    setCharIndex(0);
-                }, 300);
-                return () => clearTimeout(timer);
-            }
-        }
-    }, [lineIndex, charIndex]);
-
     return (
         <section className="py-24 bg-navy-900 overflow-hidden relative">
             <div className="container mx-auto px-6">
@@ -62,7 +39,6 @@ export const VibeCoding: React.FC = () => {
                                 <br /><br />
                                 É o fim da barreira técnica entre a ideia jurídica e a solução tecnológica.
                             </p>
-
                         </motion.div>
                     </div>
 
@@ -72,31 +48,83 @@ export const VibeCoding: React.FC = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        {/* Glossy Terminal */}
-                        <div className="bg-[#050914] rounded-3xl border border-white/10 shadow-2xl p-1 overflow-hidden">
-                            <div className="bg-white/5 px-6 py-3 flex items-center justify-between border-b border-white/5">
-                                <div className="flex gap-1.5">
-                                    <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                                    <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                        {/* Premium Code Container */}
+                        <div className="bg-[#0A0F1E] rounded-3xl border border-white/10 shadow-2xl overflow-hidden relative group">
+                            {/* Terminal Header */}
+                            <div className="bg-white/5 px-6 py-4 flex items-center justify-between border-b border-white/5">
+                                <div className="flex gap-2">
+                                    <div className="w-3 h-3 rounded-full bg-red-500/40" />
+                                    <div className="w-3 h-3 rounded-full bg-yellow-500/40" />
+                                    <div className="w-3 h-3 rounded-full bg-green-500/40" />
                                 </div>
+                                <div className="text-[10px] font-mono text-white/30 uppercase tracking-widest">legal-agent.ts</div>
                                 <Terminal size={14} className="text-white/20" />
                             </div>
-                            <div className="p-8 min-h-[350px] font-mono text-sm">
-                                <pre className="text-emerald-400 whitespace-pre-wrap">
-                                    {displayText}
-                                    <motion.span
-                                        animate={{ opacity: [0, 1] }}
-                                        transition={{ duration: 0.8, repeat: Infinity }}
-                                        className="border-l-2 border-fox-500 ml-1"
-                                    />
-                                </pre>
+
+                            {/* Code Snippet Area */}
+                            <div className="p-10 font-mono text-sm sm:text-base leading-relaxed relative">
+                                <div className="space-y-2">
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">01</span>
+                                        <p><span className="text-purple-400">import</span> <span className="text-blue-400">{`{ Agent }`}</span> <span className="text-purple-400">from</span> <span className="text-emerald-400">'@sanfran/ai'</span>;</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">02</span>
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">03</span>
+                                        <p><span className="text-purple-400">const</span> <span className="text-fox-400">agent</span> = <span className="text-purple-400">new</span> <span className="text-blue-400">Agent</span>({`{`}</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">04</span>
+                                        <p>&nbsp;&nbsp;<span className="text-blue-300">task</span>: <span className="text-emerald-400">'Mapear riscos contratuais'</span>,</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">05</span>
+                                        <p>&nbsp;&nbsp;<span className="text-blue-300">tools</span>: [<span className="text-emerald-400">'LawCrawler'</span>, <span className="text-emerald-400">'Analyzer'</span>]</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">06</span>
+                                        <p>{`}`});</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">07</span>
+                                        <p>&nbsp;</p>
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <span className="text-white/20 select-none">08</span>
+                                        <p><span className="text-purple-400">await</span> <span className="text-fox-400">agent</span>.<span className="text-blue-400">validate</span>();</p>
+                                    </div>
+                                </div>
+
+                                {/* Artificial Intelligence Glow Effect */}
+                                <div className="absolute inset-0 bg-gradient-to-tr from-fox-500/5 to-transparent pointer-events-none" />
+
+                                {/* Scanning Line Effect */}
+                                <motion.div
+                                    animate={{ top: ["0%", "100%", "0%"] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                                    className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-fox-500/50 to-transparent z-10 shadow-[0_0_15px_rgba(245,128,37,0.5)]"
+                                />
+                            </div>
+
+                            {/* Status Bar */}
+                            <div className="bg-white/5 px-6 py-2 flex items-center justify-between border-t border-white/5 text-[10px] font-mono text-white/40">
+                                <div className="flex gap-4">
+                                    <span>UTF-8</span>
+                                    <span>TypeScript</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                    <span>AI Engine Active</span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Glowing Orbs */}
-                        <div className="absolute -top-10 -right-10 w-64 h-64 bg-fox-500/20 rounded-full blur-[100px] pointer-events-none" />
-                        <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] pointer-events-none" />
+                        {/* Background Glowing Orbs */}
+                        <div className="absolute -top-20 -right-20 w-80 h-80 bg-fox-500/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-fox-500/20 transition-colors duration-700" />
+                        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
                     </motion.div>
                 </div>
             </div>

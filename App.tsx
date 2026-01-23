@@ -17,6 +17,7 @@ const TermsOfUse = lazy(() => import('./components/TermsOfUse').then(module => (
 import { FloatingMascot } from './components/ui/FloatingMascot';
 import { GlassNav } from './components/ui/GlassNav';
 import { SmoothScrollLayout } from './components/ui/SmoothScrollLayout';
+import { CookieConsent } from './components/ui/CookieConsent';
 import { NAV_ITEMS } from './constants';
 
 const App: React.FC = () => {
@@ -109,6 +110,8 @@ const App: React.FC = () => {
         <Suspense fallback={null}>
           <TermsOfUse isOpen={showTerms} onClose={() => setShowTerms(false)} />
         </Suspense>
+
+        <CookieConsent />
       </div>
     </SmoothScrollLayout>
   );

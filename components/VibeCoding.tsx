@@ -27,7 +27,6 @@ export const VibeCoding: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-fox-500/10 border border-fox-500/20 text-fox-500 text-sm font-bold mb-6">
-                                <Sparkles size={16} />
                                 Vibe Coding Orientado
                             </div>
                             <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-8 leading-tight">

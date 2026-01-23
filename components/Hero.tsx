@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
 
           <ScrollReveal delay={0.2}>
             <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">
-              O SanFran InovaLab não é apenas um grupo de estudos. Somos um ecossistema incubando soluções funcionais para desafios institucionais reais usando tecnologias 4IR.
+              O SanFran InovaLab não é apenas um grupo de estudos. Somos um ecossistema incubando soluções funcionais para desafios institucionais reais usando tecnologias 4.0. Nós temos sede na USP, mas temos caráter interinstitucional presentes também em Escolas como a FGV, a Mackenzie e o IBMEC.
             </p>
           </ScrollReveal>
 
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
                   href="#mission"
                   className="px-8 py-4 bg-navy-800 text-white rounded-full font-medium hover:bg-fox-500 transition-all duration-300 hover:shadow-lg flex items-center gap-2 group"
                 >
-                  Explorar Ecossistema <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  Explorar Ecossistema <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </Magnetic>
               <Magnetic>

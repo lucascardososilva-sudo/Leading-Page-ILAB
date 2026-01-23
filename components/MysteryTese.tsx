@@ -73,9 +73,6 @@ export const MysteryTese: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <p className="text-gray-500 text-sm italic font-medium max-w-xs">
-                        "Onde o Direito encontra seu limite físico: um paredão de dados não processados."
-                    </p>
                 </motion.div>
 
                 {/* Center: The Mystery Box / Tese Call */}

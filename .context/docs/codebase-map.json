@@ -1,0 +1,392 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-23T17:43:12.164Z",
+  "stack": {
+    "primaryLanguage": "typescript",
+    "languages": [
+      "javascript",
+      "typescript"
+    ],
+    "frameworks": [],
+    "buildTools": [
+      "vite"
+    ],
+    "testFrameworks": [],
+    "packageManager": "npm",
+    "isMonorepo": false,
+    "hasDocker": false,
+    "hasCI": false
+  },
+  "structure": {
+    "totalFiles": 47,
+    "topDirectories": [
+      {
+        "name": "AGENTS.md",
+        "fileCount": 1
+      },
+      {
+        "name": "App.tsx",
+        "fileCount": 1
+      },
+      {
+        "name": "components",
+        "fileCount": 27
+      },
+      {
+        "name": "constants.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "help.txt",
+        "fileCount": 1
+      },
+      {
+        "name": "index.html",
+        "fileCount": 1
+      },
+      {
+        "name": "index.tsx",
+        "fileCount": 1
+      },
+      {
+        "name": "logins",
+        "fileCount": 0
+      },
+      {
+        "name": "metadata.json",
+        "fileCount": 1
+      },
+      {
+        "name": "opencode_help.txt",
+        "fileCount": 1
+      },
+      {
+        "name": "package-lock.json",
+        "fileCount": 1
+      },
+      {
+        "name": "package.json",
+        "fileCount": 1
+      },
+      {
+        "name": "public",
+        "fileCount": 6
+      },
+      {
+        "name": "README.md",
+        "fileCount": 1
+      },
+      {
+        "name": "tsconfig.json",
+        "fileCount": 1
+      },
+      {
+        "name": "types.ts",
+        "fileCount": 1
+      },
+      {
+        "name": "vite.config.ts",
+        "fileCount": 1
+      }
+    ],
+    "languageDistribution": [
+      {
+        "extension": ".tsx",
+        "count": 28
+      },
+      {
+        "extension": ".json",
+        "count": 4
+      },
+      {
+        "extension": ".ts",
+        "count": 3
+      },
+      {
+        "extension": ".png",
+        "count": 3
+      },
+      {
+        "extension": ".md",
+        "count": 2
+      },
+      {
+        "extension": ".txt",
+        "count": 2
+      },
+      {
+        "extension": ".jpg",
+        "count": 2
+      },
+      {
+        "extension": ".html",
+        "count": 1
+      },
+      {
+        "extension": ".css",
+        "count": 1
+      },
+      {
+        "extension": ".zip",
+        "count": 1
+      }
+    ]
+  },
+  "architecture": {
+    "layers": [
+      {
+        "name": "Components",
+        "description": "UI components and views",
+        "directories": [
+          "components",
+          "components\\ui"
+        ],
+        "symbolCount": 14,
+        "dependsOn": []
+      }
+    ],
+    "patterns": [],
+    "entryPoints": [
+      "index.tsx"
+    ]
+  },
+  "symbols": {
+    "classes": [],
+    "interfaces": [
+      {
+        "name": "FeatureProps",
+        "kind": "interface",
+        "file": "types.ts",
+        "line": 8,
+        "exported": true
+      },
+      {
+        "name": "ModuleTrack",
+        "kind": "interface",
+        "file": "types.ts",
+        "line": 15,
+        "exported": true
+      },
+      {
+        "name": "NavItem",
+        "kind": "interface",
+        "file": "types.ts",
+        "line": 3,
+        "exported": true
+      },
+      {
+        "name": "BentoGridProps",
+        "kind": "interface",
+        "file": "components\\ui\\BentoGrid.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "BentoItemProps",
+        "kind": "interface",
+        "file": "components\\ui\\BentoGrid.tsx",
+        "line": 10,
+        "exported": false
+      },
+      {
+        "name": "FloatingMascotProps",
+        "kind": "interface",
+        "file": "components\\ui\\FloatingMascot.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "GlassCardProps",
+        "kind": "interface",
+        "file": "components\\ui\\GlassCard.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "GlassNavProps",
+        "kind": "interface",
+        "file": "components\\ui\\GlassNav.tsx",
+        "line": 12,
+        "exported": false
+      },
+      {
+        "name": "InfiniteMarqueeProps",
+        "kind": "interface",
+        "file": "components\\ui\\InfiniteMarquee.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "InteractiveCardProps",
+        "kind": "interface",
+        "file": "components\\ui\\InteractiveCard.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "MagneticProps",
+        "kind": "interface",
+        "file": "components\\ui\\Magnetic.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "NavItem",
+        "kind": "interface",
+        "file": "components\\ui\\GlassNav.tsx",
+        "line": 7,
+        "exported": false
+      },
+      {
+        "name": "ScrollRevealProps",
+        "kind": "interface",
+        "file": "components\\ui\\ScrollReveal.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "SmoothScrollLayoutProps",
+        "kind": "interface",
+        "file": "components\\ui\\SmoothScrollLayout.tsx",
+        "line": 4,
+        "exported": false
+      },
+      {
+        "name": "TermsOfUseProps",
+        "kind": "interface",
+        "file": "components\\TermsOfUse.tsx",
+        "line": 5,
+        "exported": false
+      },
+      {
+        "name": "Window",
+        "kind": "interface",
+        "file": "components\\ui\\CookieConsent.tsx",
+        "line": 11,
+        "exported": false
+      }
+    ],
+    "functions": [
+      {
+        "name": "raf",
+        "kind": "function",
+        "file": "components\\ui\\SmoothScrollLayout.tsx",
+        "line": 18,
+        "exported": true
+      }
+    ],
+    "types": [],
+    "enums": [
+      {
+        "name": "SectionId",
+        "kind": "enum",
+        "file": "types.ts",
+        "line": 22,
+        "exported": true
+      }
+    ]
+  },
+  "publicAPI": [
+    {
+      "name": "FeatureProps",
+      "kind": "interface",
+      "file": "types.ts",
+      "line": 8,
+      "exported": true
+    },
+    {
+      "name": "ModuleTrack",
+      "kind": "interface",
+      "file": "types.ts",
+      "line": 15,
+      "exported": true
+    },
+    {
+      "name": "NavItem",
+      "kind": "interface",
+      "file": "types.ts",
+      "line": 3,
+      "exported": true
+    },
+    {
+      "name": "raf",
+      "kind": "function",
+      "file": "components\\ui\\SmoothScrollLayout.tsx",
+      "line": 18,
+      "exported": true
+    }
+  ],
+  "dependencies": {
+    "mostImported": [
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\constants.ts",
+        "importedBy": 3
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\FoxLogo.tsx",
+        "importedBy": 2
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\InfiniteMarquee.tsx",
+        "importedBy": 2
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\Magnetic.tsx",
+        "importedBy": 2
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\types.ts",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\App.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\FloatingMascot.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\GlassNav.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\SmoothScrollLayout.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\CookieConsent.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\BentoGrid.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\SquadsIllustration.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\SquadsIllustrationMobile.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\ScrollReveal.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\NFTExhibition.tsx",
+        "importedBy": 1
+      },
+      {
+        "file": "C:\\Users\\boml4\\Labora\\Labora-1\\components\\ui\\GlassCard.tsx",
+        "importedBy": 1
+      }
+    ]
+  },
+  "stats": {
+    "totalSymbols": 18,
+    "exportedSymbols": 5,
+    "analysisTimeMs": 746
+  }
+}

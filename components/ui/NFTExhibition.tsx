@@ -51,6 +51,10 @@ export const NFTExhibition: React.FC = () => {
                     <img
                         src="/reynard-nft.png"
                         alt="Reynard NFT"
+                        width="380"
+                        height="380"
+                        loading="eager"
+                        fetchPriority="high"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
 

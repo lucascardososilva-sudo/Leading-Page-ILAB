@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { SQUAD_FEATURES } from '../constants';
 import { BentoGrid, BentoItem } from './ui/BentoGrid';
 import { SquadsIllustration } from './ui/SquadsIllustration';
+import { SquadsIllustrationMobile } from './ui/SquadsIllustrationMobile';
 
 export const Squads: React.FC = () => {
   return (
@@ -40,9 +41,9 @@ export const Squads: React.FC = () => {
             </div>
           </BentoItem>
 
-          {/* Mobile Illustration (Hidden on Desktop to avoid duplication if needed, or structured differently) */}
-          <div className="md:hidden mb-8">
-            <SquadsIllustration />
+          {/* Mobile Illustration */}
+          <div className="md:hidden w-full mb-8">
+            <SquadsIllustrationMobile />
           </div>
 
           {/* Features */}

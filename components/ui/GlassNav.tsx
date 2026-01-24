@@ -87,10 +87,11 @@ export const GlassNav: React.FC<GlassNavProps> = ({ items }) => {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="md:hidden text-navy-800 p-2 hover:bg-black/5 rounded-full transition-colors"
+                        className="md:hidden text-navy-800 p-3 hover:bg-black/5 rounded-full transition-colors"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        aria-label="Toggle menu"
                     >
-                        {mobileMenuOpen ? <X /> : <Menu />}
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </motion.nav >

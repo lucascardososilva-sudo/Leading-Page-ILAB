@@ -73,6 +73,7 @@ export const ContactForm: React.FC = () => {
                     <input
                         required
                         name="nome"
+                        autoComplete="name"
                         type="text"
                         value={formData.nome}
                         onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
@@ -85,6 +86,7 @@ export const ContactForm: React.FC = () => {
                     <input
                         required
                         name="email"
+                        autoComplete="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -99,6 +101,7 @@ export const ContactForm: React.FC = () => {
                 <input
                     required
                     name="whatsapp"
+                    autoComplete="tel"
                     type="tel"
                     value={formData.whatsapp}
                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}

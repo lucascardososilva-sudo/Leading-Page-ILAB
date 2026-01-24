@@ -11,8 +11,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = 0,
     return (
         <div style={{ width, overflow: "visible" }}>
             <motion.div
-                initial={{ opacity: 0, y: 75, filter: 'blur(10px)' }}
-                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                initial={{ opacity: 0, y: 75 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay, ease: "easeOut" }}
             >

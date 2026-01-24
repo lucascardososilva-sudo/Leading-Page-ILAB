@@ -29,8 +29,8 @@ export const MarketPain: React.FC = () => {
   return (
     <section className="py-24 bg-navy-900 text-white relative overflow-hidden">
       {/* Abstract Background Elements */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-navy-800/50 -skew-x-12 transform origin-top translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-fox-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-navy-800/50 -skew-x-12 transform origin-top translate-x-1/3 will-change-transform" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-fox-600/10 rounded-full blur-3xl pointer-events-none will-change-transform" />
 
       <div className="container mx-auto px-6 relative z-10">
 
@@ -58,21 +58,32 @@ export const MarketPain: React.FC = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="relative bg-navy-800 p-6 rounded-2xl border border-navy-700 hover:border-fox-500/50 transition-all group flex flex-col overflow-hidden"
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              whileHover="hover"
+              className="relative bg-navy-800 p-6 rounded-2xl border border-navy-700 hover:border-fox-500/50 transition-colors group flex flex-col overflow-hidden will-change-transform"
             >
-              {/* Scanline Effect on Hover */}
-              <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-b from-transparent via-white to-transparent h-1 w-full animate-scan" style={{ top: '-100%' }} />
-
-              <div className="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center mb-6 text-fox-500 group-hover:scale-110 group-hover:animate-glitch transition-transform duration-300">
+              <div className="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center mb-6 text-fox-500 transition-transform duration-300 group-hover:scale-110">
                 <pain.icon size={24} />
               </div>
-              <h3 className="text-lg font-bold font-display mb-4 text-white leading-tight group-hover:text-fox-400 transition-colors uppercase tracking-tight">{pain.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed flex-grow">
+
+              <h3 className="text-lg font-bold font-display mb-4 text-white leading-tight group-hover:text-fox-400 transition-colors uppercase tracking-tight relative z-10">
+                {pain.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed flex-grow relative z-10">
                 {pain.desc}
               </p>
+
+              {/* Optimized Hover Gradient (No heavy scanline) */}
+              <motion.div
+                variants={{
+                  hover: { opacity: 0.1 }
+                }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0 bg-gradient-to-t from-fox-600 to-transparent pointer-events-none"
+              />
             </motion.div>
           ))}
         </div>

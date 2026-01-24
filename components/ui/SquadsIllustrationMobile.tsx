@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 
 export const SquadsIllustrationMobile: React.FC = () => {
     return (
-        <div className="w-full bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 mb-8 relative">
+        <motion.div
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+            className="w-full bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 mb-8 relative"
+        >
 
 
             <svg
@@ -12,6 +16,22 @@ export const SquadsIllustrationMobile: React.FC = () => {
                 preserveAspectRatio="xMidYMid meet"
             >
                 <defs>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                        <feMerge>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+
+                    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="5" result="coloredBlur" />
+                        <feMerge>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+
                     <linearGradient id="pipeGradientMobile" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="#CBD5E1" stopOpacity="0.2" />
                         <stop offset="50%" stopColor="#f58025" stopOpacity="0.8" />
@@ -332,6 +352,6 @@ export const SquadsIllustrationMobile: React.FC = () => {
                 </g>
 
             </svg>
-        </div>
+        </motion.div>
     );
 };

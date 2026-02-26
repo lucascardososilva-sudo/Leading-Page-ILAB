@@ -20,6 +20,9 @@ const config: Config = {
                     900: '#7c2d12',
                 },
                 navy: {
+                    50: '#f0f4ff',
+                    100: '#e0e9ff',
+                    600: '#2d4a8a',
                     700: '#334155', // Added for completeness
                     800: '#1a2b4b', // Secondary Brand Color
                     900: '#0f172a',
